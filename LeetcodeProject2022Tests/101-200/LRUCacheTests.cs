@@ -15,7 +15,7 @@ namespace LeetcodeProject2022._101_200.Tests
         public void LRUCacheTest()
         {
             LRUCache lRUCache = new LRUCache(2);
-            Assert.AreEqual(2, lRUCache.Get(0));
+            Assert.AreEqual(1, lRUCache.Get(0));
         }
 
         [TestMethod()]

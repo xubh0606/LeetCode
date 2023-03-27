@@ -16,11 +16,10 @@ namespace LeetcodeProject2022._1_100.Tests
         {
             string s = "[[1, 1, 1],[1, 0, 1],[1, 1, 1]]";
             string sRes = "[[1,0,1],[0,0,0],[1,0,1]]";
-            ChangeStringToList change = new ChangeStringToList();
             _73_SetZeroes solution = new _73_SetZeroes();
-            int[][] arr1 = change.GetArrOfArrForInt(s);
+            int[][] arr1 = ChangeStringToList.GetArrOfArrForInt(s);
             solution.SetZeroes(arr1);
-            int[][] arr2 = change.GetArrOfArrForInt(sRes);
+            int[][] arr2 = ChangeStringToList.GetArrOfArrForInt(sRes);
             Assert.IsTrue(CompareToAnother.IsSameArrArrInt(arr1, arr2));
         }
     }

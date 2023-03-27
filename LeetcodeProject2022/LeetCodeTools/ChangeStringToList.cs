@@ -6,10 +6,32 @@ using System.Threading.Tasks;
 
 namespace LeetcodeProject2022
 {
-    public class ChangeStringToList
+    public static class ChangeStringToList
     {
+        //change to string array
+        public static string[] GetStringArray(string s)
+        {
+            IList<string> list = new List<string>();
+            string res = "";
+            for(int i = 0; i < s.Length; i++)
+            {
+                if(s[i] == '[' || s[i] == ' ' || s[i] == ']' || s[i] == ',')
+                {
+                    continue;
+                }
+                res += s[i];
+                while(s[i+1] != '[' && s[i+1] != ' ' && s[i+1] != ']' && s[i+1] != ',')
+                {
+                    i++;
+                    res += s[i];
+                }
+                list.Add(new string(res));
+                res = "";
+            }
+            return list.ToArray();
+        }
         //Change to IList<int>
-        public IList<int> GetIListForInt(string s)
+        public static IList<int> GetIListForInt(string s)
         {
             int num = 0;
             IList<int> list = new List<int>();
@@ -31,7 +53,7 @@ namespace LeetcodeProject2022
             return list;
         }
         //Change to IList<IList<int>>
-        public IList<IList<int>> GetIListIListForInt(string s)
+        public static IList<IList<int>> GetIListIListForInt(string s)
         {
             int num = 0;
             int count = -1;
@@ -78,7 +100,7 @@ namespace LeetcodeProject2022
             return bigList;
         }
         
-        public int[][] GetArrOfArrForInt(string s)
+        public static int[][] GetArrOfArrForInt(string s)
         {
             int num = 0;
             int count = -1;

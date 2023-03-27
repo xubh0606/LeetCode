@@ -14,8 +14,7 @@ namespace LeetcodeProject2022._101_200.Tests
         [TestMethod()]
         public void CalculateMinimumHPTest()
         {
-            ChangeStringToList changeL = new ChangeStringToList();
-            int[][] dungeon = changeL.GetArrOfArrForInt("[[-2 ,-3,3][- 5 ,-10, 1][10,  30, - 5]]");
+            int[][] dungeon = ChangeStringToList.GetArrOfArrForInt("[[-2 ,-3,3][- 5 ,-10, 1][10,  30, - 5]]");
             _174_CalculateMinimumHP solution = new _174_CalculateMinimumHP();
             Assert.AreEqual(7, solution.CalculateMinimumHP(dungeon));
         }

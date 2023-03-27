@@ -16,7 +16,6 @@ namespace LeetcodeProject2022Tests._1_200
         public void SubsetsTest()
         {
             int[] nums = new int[] { 1, 2, 3 };
-            ChangeStringToList change = new ChangeStringToList();
             _78_Subsets solution = new _78_Subsets();
             Assert.AreEqual(8, solution.Subsets(nums).Count);
         }

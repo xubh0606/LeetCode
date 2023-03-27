@@ -16,8 +16,7 @@ namespace LeetcodeProject2022._101_200.Tests
         {
             TreeNode root = TreeNode.GetTree(new int[] { 3, 9, 20, -1, -1, 15, 7 });
             _107_LevelOrderBottom solution = new _107_LevelOrderBottom();
-            ChangeStringToList changeL = new ChangeStringToList();
-            IList<IList<int>> list = changeL.GetIListIListForInt("[[15,7],[9,20],[3]]");
+            IList<IList<int>> list = ChangeStringToList.GetIListIListForInt("[[15,7],[9,20],[3]]");
             Assert.IsTrue(CompareToAnother.IsSameListList(list, solution.LevelOrderBottom(root)));
         }
     }

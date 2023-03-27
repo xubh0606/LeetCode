@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetcodeProject2022
 {
-    public class ChangeStringToCharArr
+    public static class ChangeStringToCharArr
     {
         public static char[][] GetCharArr(string s)
         {

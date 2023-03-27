@@ -15,8 +15,7 @@ namespace LeetcodeProject2022._101_200.Tests
         public void MaxPointsTest()
         {
             string s = " [[1,1],[2,2],[3,3]]";
-            ChangeStringToList changeArr = new ChangeStringToList();
-            int[][] point = changeArr.GetArrOfArrForInt(s);
+            int[][] point = ChangeStringToList.GetArrOfArrForInt(s);
             _149_MaxLine solution = new _149_MaxLine();
             Assert.AreEqual(3, solution.MaxPoints(point));
         }
