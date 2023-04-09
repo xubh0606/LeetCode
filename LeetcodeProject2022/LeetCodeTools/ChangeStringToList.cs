@@ -99,7 +99,53 @@ namespace LeetcodeProject2022
             }
             return bigList;
         }
-        
+        public static IList<IList<string>> GetIListIListForString(string s)
+        {
+            string res = "";
+            int count = -1;
+            int start = 0;
+            IList<IList<string>> bigList = new List<IList<string>>();
+            while (start < s.Length)
+            {
+                if (s[start] == '[')
+                {
+                    if (count < 0)
+                    {
+                        count++;
+                        continue;
+                    }
+                    start++;
+                    IList<string> list = new List<string>();
+                    bool changed = false;
+                    for (int i = start; i < s.Length; i++)
+                    {
+                        start++;
+                        if (s[i] != ',' && s[i] != ']')
+                        {
+                            res += s[i];
+                            changed = true;
+                        }
+                        else
+                        {
+                            if (changed)
+                            {
+                                list.Add(res);
+                                changed = false;
+                            }
+                            res = "";
+                            if (s[i] == ']')
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    bigList.Add(list);
+                }
+                start++;
+            }
+            return bigList;
+        }
+
         public static int[][] GetArrOfArrForInt(string s)
         {
             int num = 0;
